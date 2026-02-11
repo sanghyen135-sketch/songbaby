@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useTimelineData } from "@/hooks/useTimelineData";
 import { TimelineEntry } from "@/data/timelineData";
 import TimelineCard from "@/components/TimelineCard";
 import EditModal from "@/components/EditModal";
-import { Pencil, Plus, RotateCcw } from "lucide-react";
+import { Pencil, Plus, RotateCcw, ArrowLeft } from "lucide-react";
 
 const Index = () => {
+  const navigate = useNavigate();
   const { data, addEntry, updateEntry, deleteEntry, moveEntry, resetToDefault } = useTimelineData();
   const [isEditing, setIsEditing] = useState(false);
   const [editTarget, setEditTarget] = useState<{ index: number; entry: TimelineEntry } | null>(null);
@@ -15,6 +17,12 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Hero */}
       <header className="text-center py-12 md:py-16 px-4">
+        <button
+          onClick={() => navigate("/")}
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors"
+        >
+          <ArrowLeft size={16} /> 홈으로
+        </button>
         <h1 className="text-3xl md:text-5xl font-black text-foreground mb-3 tracking-tight">
           👶 육아 로드맵
           <span className="text-primary"> 0~9세</span>
