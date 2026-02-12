@@ -17,7 +17,7 @@ const Finance = () => {
     <div className="min-h-screen bg-background">
       <header className="text-center py-10 px-4">
         <button
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/home")}
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors"
         >
           <ArrowLeft size={16} /> 홈으로
