@@ -1,4 +1,4 @@
-export type AccountType = "kb-hub" | "husband-allowance" | "wife-allowance";
+export type AccountType = "kb-hub" | "husband-account" | "husband-stock" | "wife-account" | "wife-stock";
 
 export interface Account {
   id: AccountType;
@@ -14,6 +14,7 @@ export type TransactionCategory =
   | "savings"
   | "allowance-transfer"
   | "personal-expense"
+  | "stock"
   | "other";
 
 export interface Transaction {
@@ -28,8 +29,10 @@ export interface Transaction {
 
 export const ACCOUNT_META: Record<AccountType, { name: string; emoji: string; colorClass: string }> = {
   "kb-hub": { name: "KB 허브통장", emoji: "🏦", colorClass: "text-primary" },
-  "husband-allowance": { name: "남편 용돈", emoji: "👨‍✈️", colorClass: "text-dad" },
-  "wife-allowance": { name: "아내 용돈", emoji: "👩‍🏫", colorClass: "text-mom" },
+  "husband-account": { name: "상현 계좌", emoji: "💳", colorClass: "text-dad" },
+  "husband-stock": { name: "상현 주식", emoji: "📈", colorClass: "text-dad" },
+  "wife-account": { name: "재아 계좌", emoji: "💳", colorClass: "text-mom" },
+  "wife-stock": { name: "재아 주식", emoji: "📈", colorClass: "text-mom" },
 };
 
 export const CATEGORY_META: Record<TransactionCategory, { label: string; emoji: string }> = {
@@ -39,5 +42,6 @@ export const CATEGORY_META: Record<TransactionCategory, { label: string; emoji: 
   savings: { label: "저축", emoji: "🐷" },
   "allowance-transfer": { label: "용돈 이체", emoji: "💸" },
   "personal-expense": { label: "개인 지출", emoji: "🛒" },
+  stock: { label: "주식", emoji: "📈" },
   other: { label: "기타", emoji: "📌" },
 };
