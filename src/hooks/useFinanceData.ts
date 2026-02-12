@@ -12,11 +12,11 @@ const DEFAULT_TRANSACTIONS: Transaction[] = [
   { id: "6", date: "2026-02-05", description: "보험료", amount: -300000, account: "kb-hub", category: "fixed-expense" },
   { id: "7", date: "2026-02-10", description: "적금 이체", amount: -1000000, account: "kb-hub", category: "savings" },
   { id: "8", date: "2026-02-10", description: "남편 용돈 이체", amount: -600000, account: "kb-hub", category: "allowance-transfer" },
-  { id: "9", date: "2026-02-10", description: "용돈 입금", amount: 600000, account: "husband-allowance", category: "allowance-transfer" },
+  { id: "9", date: "2026-02-10", description: "용돈 입금", amount: 600000, account: "husband-account", category: "allowance-transfer" },
   { id: "10", date: "2026-02-10", description: "아내 용돈 이체", amount: -600000, account: "kb-hub", category: "allowance-transfer" },
-  { id: "11", date: "2026-02-10", description: "용돈 입금", amount: 600000, account: "wife-allowance", category: "allowance-transfer" },
-  { id: "12", date: "2026-02-12", description: "점심 외식", amount: -15000, account: "husband-allowance", category: "personal-expense" },
-  { id: "13", date: "2026-02-13", description: "카페", amount: -6500, account: "wife-allowance", category: "personal-expense" },
+  { id: "11", date: "2026-02-10", description: "용돈 입금", amount: 600000, account: "wife-account", category: "allowance-transfer" },
+  { id: "12", date: "2026-02-12", description: "점심 외식", amount: -15000, account: "husband-account", category: "personal-expense" },
+  { id: "13", date: "2026-02-13", description: "카페", amount: -6500, account: "wife-account", category: "personal-expense" },
   { id: "14", date: "2026-02-05", description: "식비(장보기)", amount: -450000, account: "kb-hub", category: "fixed-expense" },
 ];
 
