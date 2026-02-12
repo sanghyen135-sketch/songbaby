@@ -19,8 +19,8 @@ const TransactionList = ({ transactions, onDelete }: Props) => {
       </div>
       <div className="divide-y max-h-[400px] overflow-y-auto">
         {sorted.map((t) => {
-          const catMeta = CATEGORY_META[t.category];
-          const accMeta = ACCOUNT_META[t.account];
+          const catMeta = CATEGORY_META[t.category] ?? { label: t.category, emoji: "📌" };
+          const accMeta = ACCOUNT_META[t.account] ?? { name: t.account, emoji: "❓", colorClass: "" };
           const isIncome = t.amount > 0;
           return (
             <div key={t.id} className="flex items-center gap-3 px-4 py-3 hover:bg-muted/50 transition-colors">
