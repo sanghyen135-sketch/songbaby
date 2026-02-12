@@ -17,7 +17,7 @@ const Home = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
         {/* 임신 로드맵 */}
         <button
           onClick={() => navigate("/pregnancy")}
@@ -58,6 +58,28 @@ const Home = () => {
               <span className="text-xs px-2 py-1 rounded-full bg-money-in/15 text-money-in font-semibold">💰 지원금</span>
               <span className="text-xs px-2 py-1 rounded-full bg-money-out/15 text-money-out font-semibold">💸 지출</span>
               <span className="text-xs px-2 py-1 rounded-full bg-secondary/15 text-secondary font-semibold">👨‍👩‍👦 할 일</span>
+            </div>
+          </div>
+        </button>
+
+        {/* 가계부 */}
+        <button
+          onClick={() => navigate("/finance")}
+          className="group relative rounded-2xl bg-card border border-border p-8 text-left shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-money-in/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="relative z-10">
+            <span className="text-5xl mb-4 block">💰</span>
+            <h2 className="text-xl font-black text-foreground mb-2">가계부</h2>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              맞벌이 부부 중앙 집중형 자금 관리
+              <br />
+              KB허브 → 용돈 배분 흐름 한눈에
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <span className="text-xs px-2 py-1 rounded-full bg-money-in/15 text-money-in font-semibold">💰 수입</span>
+              <span className="text-xs px-2 py-1 rounded-full bg-money-out/15 text-money-out font-semibold">💸 지출</span>
+              <span className="text-xs px-2 py-1 rounded-full bg-primary/15 text-primary font-semibold">🏦 통장</span>
             </div>
           </div>
         </button>
