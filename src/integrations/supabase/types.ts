@@ -14,7 +14,80 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      apartment_transactions: {
+        Row: {
+          apartment_id: string
+          apt_name: string | null
+          area: number | null
+          deal_amount: string
+          deal_day: string
+          deal_month: string
+          deal_year: string
+          fetched_at: string
+          floor: string | null
+          id: string
+        }
+        Insert: {
+          apartment_id: string
+          apt_name?: string | null
+          area?: number | null
+          deal_amount: string
+          deal_day: string
+          deal_month: string
+          deal_year: string
+          fetched_at?: string
+          floor?: string | null
+          id?: string
+        }
+        Update: {
+          apartment_id?: string
+          apt_name?: string | null
+          area?: number | null
+          deal_amount?: string
+          deal_day?: string
+          deal_month?: string
+          deal_year?: string
+          fetched_at?: string
+          floor?: string | null
+          id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "apartment_transactions_apartment_id_fkey"
+            columns: ["apartment_id"]
+            isOneToOne: false
+            referencedRelation: "tracked_apartments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      tracked_apartments: {
+        Row: {
+          address: string | null
+          created_at: string
+          dong_code: string | null
+          id: string
+          name: string
+          region_code: string
+        }
+        Insert: {
+          address?: string | null
+          created_at?: string
+          dong_code?: string | null
+          id?: string
+          name: string
+          region_code: string
+        }
+        Update: {
+          address?: string | null
+          created_at?: string
+          dong_code?: string | null
+          id?: string
+          name?: string
+          region_code?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
